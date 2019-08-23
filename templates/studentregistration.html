@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <div class="container-fluid">
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Student Registration</h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            </div>
+            <div class="row">
+                <form action='.' method='POST'>{% csrf_token %}
+                    {{form.as_p}}
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="inputStudentname">Student Name</label>
+                            <input type="text" class="form-control" id="inputStudentname" placeholder="Rabina">
+                        </div>
+                        <div class="form-group col-md-8">
+                        <label for="inputCollegename">College Name</label>
+                        <input type="text" class="form-control" id="inputCollegename" placeholder="Universal">
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="inputfaculty">Faculty</label>
+                            <select>
+                                <option value="B.Sc.Cs.It">B.Sc.Cs.It</option>
+                                <option value="B.CA">B.CA</option>
+                                <option value="B.IM">B.IM</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="inputSemester">Semester</label>
+                            <select>
+                                <option value="first">First</option>
+                                <option value="second">Second</option>
+                                <option value="third">Third</option>
+                                <option value="fourth">Fourth</option>
+                                <option value="fifth">Fifth</option>
+                                <option value="sixth">Sixth</option>
+                                <option value="seventh">Seventh</option>
+                                <option value="eighth">Eighth</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="inputNumber">Phone Number</label>
+                            <input type="number" class="form-control" id="inputNumber" placeholder="9811956469">
+                        </div>   
+
+                        <div class="form-group col-md-8">
+                            <label for="inputPassword4">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" value="Save">Register </button>
+                    <botton type="reset" class="btn btn-primary">Reset</botton>
+                    
+                </form>
+            </div>
+        </div>
+{% endblock %}
+<!---
+faculty_choices=(
+        ('B.Sc.Cs.It', 'B.Sc.Cs.It') ,
+        ('B.CA', 'B.CA'), 
+        ('B.IM', 'B.IM')  
+    )
+    sem_choices=(
+        ('First', 'First'),
+        ('Second','Second'),
+        ('Third','Third'),
+        ('Fourth','Fourth'),
+        ('Fifth','Fifth'),
+        ('Sixth','Sixth'),
+        ('Seventh','Seventh'),
+        ('Eighth','Eighth')
+    ) 
+    Faculty=models.CharField(max_length=20,choices=faculty_choices)
+    Semester=models.CharField(max_length=50,choices=sem_choices)
+    Email=models.EmailField(max_length=50,default='srh.def@gmail.com')
+    Phone_no=models.IntegerField(default=0)
+    Password= models.CharField(max_length=50,default='apple')
+
+class studentlogin(models.Model):
+    email=models.ForeignKey(Student,on_delete=models.CASCADE,related_name='email')
+    password=models.ForeignKey(Student,on_delete=models.CASCADE,related_name='password')
+
+-->
+

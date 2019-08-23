@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>Student Login</h2>
+<div class="col-md-4">
+<form method='POST'>{% csrf_token %}
+    {{form1|crispy}}
+<input type="submit", value="Save"/>
+{{user}}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="color:red">Events</h1>
+        <div class="col-md-6">
+            {% for item1 in showallevents %}
+            <img src="{{item1.Eventlogo.url}}" class="img-responsive" width="100%" height="300px">
+            <a href="{% url 'Indrenievents:eventdetails' pk=item1.pk %}"><button type="btn"  class="btn btn-info">{{item1.Eventname}}</button></a> 
+            <br>
+            <br>    
+            {% endfor %} 
+        </div>   
+
+{% endblock %}
+
+
+
+    

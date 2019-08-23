@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Student Registration</h1>
+            
+    </div>
+    <div class="row">
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" name="email"  placeholder="Email" required="True">
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="inputPassword4">Password</label>
+                    <input type="password" class="form-control" name="password" required="True" placeholder="Password">
+                </div>
+            </div>
+            <input type="submit" name="login" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+                   
